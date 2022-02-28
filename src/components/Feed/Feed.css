@@ -1,0 +1,28 @@
+.Feed {
+    width: 42rem;
+    background-color: white;
+    border-radius: 1rem;
+    height: fit-content;
+}
+.Feed .Feed-post-container .Feed-post-input-container {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    justify-content: space-between;
+    border-bottom: 0.1rem solid lightgray;
+}
+.Feed .Feed-post-container .Feed-post-input-container .Feed-post-input {
+    width: 35rem;
+    height: 3rem;
+    border-radius: 1rem;
+    border: 0.1rem solid lightgray;
+    padding-left: 1.5rem;
+}
+.Feed .Feed-post-container .Feed-post-input-container .Feed-post-input:focus-visible {
+    outline: none;
+}
+.Feed .Feed-post-container .Feed-post-options {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}

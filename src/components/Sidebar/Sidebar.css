@@ -1,0 +1,72 @@
+.Sidebar {
+    background-color: white;
+    width: 20rem;
+    border-radius: 1rem;
+    font-size: 1.4rem;
+    position: sticky;
+    top: 8.5rem;
+}
+.Sidebar .Sidebar-top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 0.1rem solid lightgray;
+    padding: 0 1rem;
+}
+.Sidebar .Sidebar-background {
+    margin-bottom: -2rem;
+    width: 100%;
+    height: 6rem;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    border: none;
+    object-fit: cover;
+}
+.Sidebar .Sidebar-top .Sidebar-top-name {
+    margin: 0.5rem 0;
+}
+.Sidebar .Sidebar-top .Sidebar-top-info {
+    font-size: 1.2rem;
+    text-align: center;
+    margin: 0.5rem 0;
+}
+.Sidebar .Sidebar-stats {
+    padding: 1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-bottom: 0.1rem solid lightgray;
+}
+.Sidebar .Sidebar-stats .Sidebar-stat {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    
+}
+.Sidebar .Sidebar-stats .Sidebar-stat:last-child {
+    margin-bottom: 0;
+}
+.Sidebar .Sidebar-stats .Sidebar-stat-number {
+    font-weight: normal;
+    color: #2979ca;
+}
+.Sidebar .Sidebar-button .Sidebar-button-recent {
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+}
+.Sidebar-button-recentItems {
+    padding-right: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 3.5rem;
+    font-size: 1.2rem;
+    display: flex;
+    flex-direction: column;
+}
+.Sidebar-button-recentItems span {
+    margin: 0.5rem 0;
+}
+.Sidebar .Sidebar-button p {
+    margin-left: 1rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+}

@@ -11,6 +11,7 @@
 }
 .HeaderOption:hover {
     color: black;
+    background-color: #eef3f8;
 }
 .HeaderOption svg {
     width: 3rem;

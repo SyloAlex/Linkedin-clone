@@ -1,0 +1,18 @@
+.FeedOption {
+    font-size: 1.2rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 1rem;
+    cursor: pointer;
+}
+.FeedOption:hover {
+    background-color: whitesmoke;
+}
+.FeedOption span {
+    margin-left: 0.5rem;
+}
+.FeedOption svg {
+    width: 1.8rem;
+    height: 1.8rem;
+}
