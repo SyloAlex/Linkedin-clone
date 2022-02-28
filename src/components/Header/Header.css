@@ -1,0 +1,56 @@
+/* Header */
+.Header {
+    height: 6rem;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    display: flex;
+    padding-left: 2rem;
+    justify-content: space-between;
+    z-index: 999;
+}
+/* Header left */
+.Header .Header-left {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.Header .Header-left img {
+    object-fit: contain;
+    height: 4rem;
+}
+.Header .Header-left .Header-search {
+    display: none;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 0.5rem;
+    background-color: #eef3f8;
+    margin-left: 2rem;
+    display: none;
+}
+.Header .Header-left .Header-search svg {
+    height: 2rem;
+    width: 2rem;
+    margin: 0 0.5rem;
+}
+.Header .Header-left .Header-search input {
+    width: 20rem;
+    background-color: #eef3f8;
+    height: 2.5rem;
+    border-radius: 0.5rem;
+    border: none;
+}
+.Header .Header-left .Header-search input:focus-visible {
+    outline: none;
+}
+/* Header right */
+.Header .Header-right {
+    display: flex;
+    margin-right: 2rem;
+}
+
+@media (min-width:800px) {
+    .Header .Header-left .Header-search {
+        display: flex;
+    }
+}
