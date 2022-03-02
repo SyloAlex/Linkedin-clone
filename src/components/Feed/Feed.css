@@ -14,8 +14,11 @@
     justify-content: space-between;
     border-bottom: 0.1rem solid lightgray;
 }
+.Feed .Feed-post-container .Feed-post-input-container form {
+    width: 85%;
+}
 .Feed .Feed-post-container .Feed-post-input-container .Feed-post-input {
-    width: 35rem;
+    width: 100%;
     height: 3rem;
     border-radius: 1rem;
     border: 0.1rem solid lightgray;

@@ -4,7 +4,9 @@
     border-radius: 1rem;
     font-size: 1.4rem;
     position: sticky;
-    top: 8.5rem;
+    top: 4rem;
+    /* top: 8.5rem; */
+    height: fit-content;
 }
 .Sidebar .Sidebar-top {
     display: flex;

@@ -6,6 +6,7 @@ import SupervisorAccountIcon from '@mui/icons-material/SupervisorAccount';
 import BusinessCenterIcon from '@mui/icons-material/BusinessCenter';
 import ChatIcon from '@mui/icons-material/Chat';
 import NotificationsIcon from '@mui/icons-material/Notifications';
+import logo from '../../assets/linkedin.png'
 import './Header.css'
 
 const Header = () => {
@@ -13,7 +14,7 @@ const Header = () => {
         <div className="Header">
             <div className="Header-left">
                 <figure className="Header-figure">
-                    <img src="https://cdn-icons.flaticon.com/png/512/3536/premium/3536505.png?token=exp=1646061439~hmac=20230aebe81fbce465a0ade8cdb37992" alt="Logo" className="Header-image" />
+                    <img src={logo} alt="Logo" className="Header-image" />
                 </figure>
                 <div className="Header-search">
                     <SearchIcon />

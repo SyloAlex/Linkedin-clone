@@ -9,7 +9,73 @@ import CalendarViewDayIcon from '@mui/icons-material/CalendarViewDay';
 import Post from '../Post/Post';
 
 const Feed = () => {
-    const [posts, setPosts] = useState([]);
+    const [posts, setPosts] = useState([
+        {
+            name: 'Alejandro Mena',
+            message: 'This is a message',
+            description: 'This is were the description goes'
+        },
+        {
+            name: 'Alejandro Mena',
+            message: 'This is a message',
+            description: 'This is were the description goes'
+        },
+        {
+            name: 'Alejandro Mena',
+            message: 'This is a message',
+            description: 'This is were the description goes'
+        },
+        {
+            name: 'Alejandro Mena',
+            message: 'This is a message',
+            description: 'This is were the description goes'
+        },
+        {
+            name: 'Alejandro Mena',
+            message: 'This is a message',
+            description: 'This is were the description goes'
+        },
+        {
+            name: 'Alejandro Mena',
+            message: 'This is a message',
+            description: 'This is were the description goes'
+        },
+        {
+            name: 'Alejandro Mena',
+            message: 'This is a message',
+            description: 'This is were the description goes'
+        },
+        {
+            name: 'Alejandro Mena',
+            message: 'This is a message',
+            description: 'This is were the description goes'
+        },
+        {
+            name: 'Alejandro Mena',
+            message: 'This is a message',
+            description: 'This is were the description goes'
+        },
+        {
+            name: 'Alejandro Mena',
+            message: 'This is a message',
+            description: 'This is were the description goes'
+        },
+        {
+            name: 'Alejandro Mena',
+            message: 'This is a message',
+            description: 'This is were the description goes'
+        },
+        {
+            name: 'Alejandro Mena',
+            message: 'This is a message',
+            description: 'This is were the description goes'
+        },
+        {
+            name: 'Alejandro Mena',
+            message: 'This is a message',
+            description: 'This is were the description goes'
+        }
+    ]);
     const sendPost = (event) => {
         event.preventDefault();
     }

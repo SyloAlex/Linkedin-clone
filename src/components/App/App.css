@@ -3,3 +3,26 @@
     display: flex;
     justify-content: space-evenly;
 }
+
+@media (max-width:650px) {
+    .App-body {
+        flex-direction: column;
+        align-items: center;
+    }
+    .App-body .Sidebar .Sidebar-stats,
+    .App-body .Sidebar .Sidebar-button {
+        display: none;
+    }
+    .App-body .Sidebar,
+    .App-body .Feed {
+        width: 85%;
+    }
+    .App-body .Sidebar {
+        margin-bottom: 1rem;
+        position: inherit;
+    }
+    .Sidebar .Sidebar-top {
+        margin-bottom: 1rem;
+        border-bottom: none;
+    }
+}
