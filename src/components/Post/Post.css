@@ -1,0 +1,31 @@
+.Post {
+    margin-top: 1rem;
+    background-color: white;
+    border-radius: 1rem;
+}
+.Post .Post-header {
+    padding: 1rem;
+    display: flex;
+    margin-bottom: 1rem;
+}
+.Post .Post-header .Post-header-info {
+    font-size: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-left: 1rem;
+}
+.Post .Post-header .Post-header-info .Post-header-info-name {
+    font-weight: bold;
+}
+.Post .Post-body {
+    font-size: 1.4rem;
+    padding: 0 1rem;
+}
+.Post .Post-header .Post-header-info .Post-header-info-description {
+    color: #717171;
+}
+.Post .Post-buttons {
+    display: flex;
+    justify-content: space-evenly;
+}
