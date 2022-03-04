@@ -7,7 +7,7 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import SendIcon from '@mui/icons-material/Send';
 import './Post.css'
 
-const Post = ({ name, description, message, photoUrl }) => {
+const Post = ({ name, description, message, photoUrl, timestamp }) => {
     return (
         <div className="Post">
             <div className="Post-header">
@@ -15,6 +15,7 @@ const Post = ({ name, description, message, photoUrl }) => {
                 <div className="Post-header-info">
                     <p className="Post-header-info-name">{name}</p>
                     <p className="Post-header-info-description">{description}</p>
+                    <p className="Post-header-info-timestamp">No date yet</p>
                 </div>
             </div>
             <div className="Post-body">

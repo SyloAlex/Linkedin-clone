@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Avatar } from '@mui/material'
 import './Feed.css'
 import FeedOption from '../FeedOption/FeedOption'
@@ -7,77 +7,46 @@ import SubscriptionsIcon from '@mui/icons-material/Subscriptions';
 import EventNoteIcon from '@mui/icons-material/EventNote';
 import CalendarViewDayIcon from '@mui/icons-material/CalendarViewDay';
 import Post from '../Post/Post';
+import { db } from '../../firebase/firebase-config';
+import { firestore } from 'firebase';
 
 const Feed = () => {
-    const [posts, setPosts] = useState([
-        {
-            name: 'Alejandro Mena',
-            message: 'This is a message',
-            description: 'This is were the description goes'
-        },
-        {
-            name: 'Alejandro Mena',
-            message: 'This is a message',
-            description: 'This is were the description goes'
-        },
-        {
-            name: 'Alejandro Mena',
-            message: 'This is a message',
-            description: 'This is were the description goes'
-        },
-        {
-            name: 'Alejandro Mena',
-            message: 'This is a message',
-            description: 'This is were the description goes'
-        },
-        {
-            name: 'Alejandro Mena',
-            message: 'This is a message',
-            description: 'This is were the description goes'
-        },
-        {
-            name: 'Alejandro Mena',
-            message: 'This is a message',
-            description: 'This is were the description goes'
-        },
-        {
-            name: 'Alejandro Mena',
-            message: 'This is a message',
-            description: 'This is were the description goes'
-        },
-        {
-            name: 'Alejandro Mena',
-            message: 'This is a message',
-            description: 'This is were the description goes'
-        },
-        {
-            name: 'Alejandro Mena',
-            message: 'This is a message',
-            description: 'This is were the description goes'
-        },
-        {
-            name: 'Alejandro Mena',
-            message: 'This is a message',
-            description: 'This is were the description goes'
-        },
-        {
-            name: 'Alejandro Mena',
-            message: 'This is a message',
-            description: 'This is were the description goes'
-        },
-        {
-            name: 'Alejandro Mena',
-            message: 'This is a message',
-            description: 'This is were the description goes'
-        },
-        {
-            name: 'Alejandro Mena',
-            message: 'This is a message',
-            description: 'This is were the description goes'
-        }
-    ]);
-    const sendPost = (event) => {
+    const [posts, setPosts] = useState([]);
+    const [input, setInput] = useState('');
+
+    const fetchPosts = async () => {
+        const dbFirebase = []
+        const response = await db.collection('linkedin-posts').get();
+        response.docs.forEach(doc => {
+            dbFirebase.push(
+                {
+                    id: doc.ref.id,
+                    data: doc.data()
+                }
+            )
+        })
+        setPosts(dbFirebase)
+    }
+
+    useEffect(() => {
+        fetchPosts();
+    }, [])
+
+    const printDB = (event) => {
         event.preventDefault();
+        console.log(posts);
+    }
+    const addPost = (event) => {
+        event.preventDefault();
+        db.collection('linkedin-posts').add({
+            name: 'Sabry',
+            message: input,
+            description: 'Software Engineer',
+            photoUrl: '',
+            timestamp: firestore.FieldValue.serverTimestamp(),
+        });
+        document.getElementById('input-post').value = '';
+        fetchPosts()
     }
 
     return (
@@ -88,11 +57,14 @@ const Feed = () => {
                     <form>
                         <input
                             type="text"
+                            id='input-post'
                             className="Feed-post-input"
-                            placeholder='Post!' />
+                            placeholder='Post!'
+                            onChange={e => setInput(e.target.value)} />
                         <button
                             type='submit'
-                            onClick={sendPost} />
+                            onClick={addPost}
+                        />
                     </form>
                 </div>
                 <div className="Feed-post-options">
@@ -117,14 +89,14 @@ const Feed = () => {
             <div className="Feed-recent-post-container">
                 {posts.map(post => (
                     <Post
-                        name={post.name}
-                        message={post.message}
-                        description={post.description} />
-                ))}
-                <Post
-                    name='Alejandro Mena'
-                    message='This is a message'
-                    description='This is were the description goes' />
+                        key={post.id}
+                        name={post.data.name}
+                        message={post.data.message}
+                        description={post.data.description}
+                        photoUrl={post.data.photoUrl}
+                        timestamp={post.data.timestamp} />
+                )
+                )}
             </div>
         </div>
     )

@@ -9,20 +9,22 @@
     margin-bottom: 1rem;
 }
 .Post .Post-header .Post-header-info {
-    font-size: 1.2rem;
+    font-size: 1rem;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-between;
     margin-left: 1rem;
 }
 .Post .Post-header .Post-header-info .Post-header-info-name {
     font-weight: bold;
+    font-size: 1.2rem;
 }
 .Post .Post-body {
     font-size: 1.4rem;
     padding: 0 1rem;
 }
-.Post .Post-header .Post-header-info .Post-header-info-description {
+.Post .Post-header .Post-header-info .Post-header-info-description,
+.Post .Post-header .Post-header-info .Post-header-info-timestamp {
     color: #717171;
 }
 .Post .Post-buttons {

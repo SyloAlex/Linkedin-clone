@@ -1,1 +1,0 @@
-const reminder = 'MINUTO 1:40'
