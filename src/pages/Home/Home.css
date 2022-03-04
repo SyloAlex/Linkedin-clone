@@ -1,0 +1,43 @@
+.Register-container {
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+}
+.Register-container .Logo-container {
+    width: 50%;
+}
+.Register-container .Logo-container img {
+    width: 100%;
+}
+.Register-container .Register-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 2rem;
+}
+.Register-container .Register-form input,
+.Register-container .Register-form button {
+    width: 85%;
+    margin: 0 auto;
+    border: none;
+    border-radius: 0.5rem;
+}
+.Register-container .Register-form input {
+    width: 85%;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+    padding-left: 1rem;
+    height: 2.2rem;
+}
+.Register-container .Register-form input:focus-visible {
+    outline: none;
+}
+.Register-container .Register-form button {
+    background-color: #0b66c2;
+    color: white;
+    height: 2.5rem;
+}

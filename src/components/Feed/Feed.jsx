@@ -7,35 +7,17 @@ import SubscriptionsIcon from '@mui/icons-material/Subscriptions';
 import EventNoteIcon from '@mui/icons-material/EventNote';
 import CalendarViewDayIcon from '@mui/icons-material/CalendarViewDay';
 import Post from '../Post/Post';
-import { db } from '../../firebase/firebase-config';
+import { db, fetchPosts } from '../../firebase/firebase-config';
 import { firestore } from 'firebase';
 
 const Feed = () => {
     const [posts, setPosts] = useState([]);
     const [input, setInput] = useState('');
 
-    const fetchPosts = async () => {
-        const dbFirebase = []
-        const response = await db.collection('linkedin-posts').get();
-        response.docs.forEach(doc => {
-            dbFirebase.push(
-                {
-                    id: doc.ref.id,
-                    data: doc.data()
-                }
-            )
-        })
-        setPosts(dbFirebase)
-    }
-
     useEffect(() => {
-        fetchPosts();
+        fetchPosts(setPosts);
     }, [])
 
-    const printDB = (event) => {
-        event.preventDefault();
-        console.log(posts);
-    }
     const addPost = (event) => {
         event.preventDefault();
         db.collection('linkedin-posts').add({
@@ -46,7 +28,7 @@ const Feed = () => {
             timestamp: firestore.FieldValue.serverTimestamp(),
         });
         document.getElementById('input-post').value = '';
-        fetchPosts()
+        fetchPosts(setPosts)
     }
 
     return (

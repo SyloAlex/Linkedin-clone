@@ -14,13 +14,18 @@ const firebaseConfig = {
 
 const app = firebase.initializeApp(firebaseConfig);
 const db = app.firestore();
-const fetchPosts = async () => {
+const fetchPosts = async (prop) => {
     const dbFirebase = []
-    const response = await db.collection('linkedin-posts').get();
+    const response = await db.collection('linkedin-posts').orderBy('timestamp', 'desc').get();
     response.docs.forEach(doc => {
-        dbFirebase.push(doc.data())
+        dbFirebase.push(
+            {
+                id: doc.ref.id,
+                data: doc.data()
+            }
+        )
     })
-    return dbFirebase;
+    prop(dbFirebase)
 }
 
 export { db, app, fetchPosts };

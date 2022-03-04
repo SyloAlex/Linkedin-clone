@@ -1,18 +1,17 @@
 import React from 'react'
-import Header from '../Header/Header'
-import Sidebar from '../Sidebar/Sidebar'
-import Feed from '../Feed/Feed'
 import './App.css'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import FeedPage from '../../pages/FeedPage/FeedPage'
+import Home from '../../pages/Home/Home'
 
 const App = () => {
     return (
-        <React.Fragment>
-            <Header />
-            <div className="App-body">
-                <Sidebar />
-                <Feed />
-            </div>
-        </React.Fragment>
+        <BrowserRouter>
+            <Routes>
+                <Route path='/' element={<Home />} />
+                <Route path='/feed' element={<FeedPage />} />
+            </Routes>
+        </BrowserRouter>
     )
 }
 
