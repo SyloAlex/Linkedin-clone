@@ -1,0 +1,41 @@
+.Login-container {
+    width: 50vw;
+    height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.Login-container .Logo-container {
+    width: 50%;
+}
+.Login-container .Logo-container img {
+    width: 100%;
+}
+.Login-container .Login-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 2rem;
+}
+.Login-container .Login-form input,
+.Login-container .Login-form button {
+    width: 70%;
+    margin: 0 auto;
+    border: none;
+    border-radius: 0.5rem;
+}
+.Login-container .Login-form input {
+    margin-bottom: 1rem;
+    padding-left: 1rem;
+    height: 2.2rem;
+}
+.Login-container .Login-form input:focus-visible {
+    outline: none;
+}
+.Login-container .Login-form button {
+    background-color: #0b66c2;
+    color: white;
+    height: 2.5rem;
+}

@@ -1,7 +1,7 @@
-import firebase from "firebase";
 import 'firebase/storage'
 import 'firebase/firestore'
 import 'firebase/auth'
+import { initializeApp } from "firebase";
 
 const firebaseConfig = {
     apiKey: "AIzaSyBlr2navyHzwxb_HLMKLdEOpwW8PRlGyZ8",
@@ -12,20 +12,8 @@ const firebaseConfig = {
     appId: "1:519022823488:web:59a2fc4cc5494d76e337a5"
 };
 
-const app = firebase.initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);
 const db = app.firestore();
-const fetchPosts = async (prop) => {
-    const dbFirebase = []
-    const response = await db.collection('linkedin-posts').orderBy('timestamp', 'desc').get();
-    response.docs.forEach(doc => {
-        dbFirebase.push(
-            {
-                id: doc.ref.id,
-                data: doc.data()
-            }
-        )
-    })
-    prop(dbFirebase)
-}
 
-export { db, app, fetchPosts };
+
+export { db, app };

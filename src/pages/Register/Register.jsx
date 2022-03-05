@@ -1,8 +1,12 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import Logo from '../../assets/big-linkedin-logo.png';
-import './Home.css'
+import './Register.css'
 
-const Home = () => {
+const Register = () => {
+    const user = useSelector(state => state.posts)
+    console.log(user);
+
     return (
         <div className="Register-container">
             <figure className="Logo-container">
@@ -20,4 +24,4 @@ const Home = () => {
     )
 }
 
-export default Home
+export default Register;

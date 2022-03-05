@@ -1,21 +1,24 @@
 import React, { useEffect, useState } from 'react'
-import { Avatar } from '@mui/material'
-import './Feed.css'
+import { useDispatch, useSelector } from 'react-redux';
 import FeedOption from '../FeedOption/FeedOption'
+import Post from '../Post/Post';
+import getPosts from '../../firebase/getPosts';
+import { db } from '../../firebase/firebase-config';
+import { firestore } from 'firebase';
+import { Avatar } from '@mui/material'
 import ImageIcon from '@mui/icons-material/Image';
 import SubscriptionsIcon from '@mui/icons-material/Subscriptions';
 import EventNoteIcon from '@mui/icons-material/EventNote';
 import CalendarViewDayIcon from '@mui/icons-material/CalendarViewDay';
-import Post from '../Post/Post';
-import { db, fetchPosts } from '../../firebase/firebase-config';
-import { firestore } from 'firebase';
+import './Feed.css'
 
 const Feed = () => {
-    const [posts, setPosts] = useState([]);
     const [input, setInput] = useState('');
+    const dispatch = useDispatch();
+    const postsState = useSelector(state => state.posts);
 
     useEffect(() => {
-        fetchPosts(setPosts);
+        getPosts(dispatch);
     }, [])
 
     const addPost = (event) => {
@@ -28,7 +31,7 @@ const Feed = () => {
             timestamp: firestore.FieldValue.serverTimestamp(),
         });
         document.getElementById('input-post').value = '';
-        fetchPosts(setPosts)
+        getPosts(dispatch);
     }
 
     return (
@@ -69,7 +72,7 @@ const Feed = () => {
                 </div>
             </div>
             <div className="Feed-recent-post-container">
-                {posts.map(post => (
+                {postsState.posts.map(post => (
                     <Post
                         key={post.id}
                         name={post.data.name}
